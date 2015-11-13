@@ -1,0 +1,17 @@
+{
+  "name": "company_maket",
+  "version": "1.0.0",
+  "description": "demo of site",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "ejs": "^2.3.4",
+    "mysql": "^2.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
