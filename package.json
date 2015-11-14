@@ -6,22 +6,29 @@
   "scripts": {
     "start": "node app.js"
   },
- "dependencies": {
-    "express": "4.13.3",
-    "ejs": "2.3.4",
-    "mysql": "2.9.0"
+  "dependencies": {
+    "express": "^4.13.3",
+    "ejs": "^2.3.4",
+    "mysql": "^2.9.0"
   },
   "engines": {
-    "node": "4.1.1"
+    "node": "4.1.1",
+    "npm": "2.14.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/antonsavchenko94/realtor"
+    "url": "git+https://github.com/antonsavchenko94/realtor.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonsavchenko94/realtor/issues"
+  },
+  "homepage": "https://github.com/antonsavchenko94/realtor#readme",
+  "devDependencies": {},
+  "author": "Anton Savchenko"
 }

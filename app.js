@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var path = require('path');
-var mysql = require('./db');
+var db = require('./db');
 
 var app = express();
 var count = 0;
@@ -20,21 +20,22 @@ app.get('/adverts', function (req, res) {
     res.render('adverts', {title:'Test'});
 });
 
-app.listen(3000, function(){
-    console.log("Server start on port 3000")
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function(){
+    console.log("Server start on port  " + app.get('port'));
 });
 
 //////////////////////////////API ROUTING//////////////////////////////
 app.get('/api/users', function (req, res) {
-    mysql.users(res);
+    db.users(res);
 });
 app.get('/api/user', function (req, res) {
-    mysql.user(req,res);
+    db.user(req,res);
 });
 app.get('/api/adverts', function (req, res) {
-    mysql.adverts(res);
+    db.adverts(res);
 });
 
 //app.get('/api/adverts', function (req, res) {
-//    res.send(mysql.json);
+//    res.send(db.json);
 //});
