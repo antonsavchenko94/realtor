@@ -1,0 +1,41 @@
+/**
+ * Created by mozli on 08.11.2015.
+ */
+var express = require('express');
+var path = require('path');
+var db = require('./db');
+
+var app = express();
+var count = 0;
+
+app.use(express.static(__dirname + '/public'));
+
+app.set('views', __dirname+'/views');
+app.set('view engine', 'ejs');
+
+app.get('/', function (req, res) {
+    res.render('index', {title:'Test'});
+});
+app.get('/adverts', function (req, res) {
+    res.render('adverts', {title:'Test'});
+});
+
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function(){
+    console.log("Server start on port  " + app.get('port'));
+});
+
+//////////////////////////////API ROUTING//////////////////////////////
+app.get('/api/users', function (req, res) {
+    db.users(res);
+});
+app.get('/api/user', function (req, res) {
+    db.user(req,res);
+});
+app.get('/api/adverts', function (req, res) {
+    db.adverts(res);
+});
+
+//app.get('/api/adverts', function (req, res) {
+//    res.send(db.json);
+//});
