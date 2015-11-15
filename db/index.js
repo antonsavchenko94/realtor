@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var connection  = mysql.createConnection({
-        host        :   'localhost',
-        user        :   'root',
-        password    :   'BanderaMozli1994',
-        database    :   'company'
+        host        :   'sql4.freemysqlhosting.net',
+        user        :   'sql496545',
+        password    :   'c2HXNikVMn',
+        database    :   'sql496545'
     });
 //connection.query('select * from user', function(err, rows, fields){
 //    if(err) throw err;
