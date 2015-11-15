@@ -7,6 +7,7 @@ var connection  = mysql.createConnection({
         database    :   'sql496545'
     });
 
+
 module.exports = {
     users: function (res) {
         var query = connection.query('select * from user', function (err, rows, fields) {
