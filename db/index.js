@@ -6,11 +6,7 @@ var connection  = mysql.createConnection({
         password    :   'c2HXNikVMn',
         database    :   'sql496545'
     });
-//connection.query('select * from user', function(err, rows, fields){
-//    if(err) throw err;
-//    console.log("user name = ", rows[0].first_name);
-//    exports.json = JSON.stringify(rows);
-//});
+
 module.exports = {
     users: function (res) {
         var query = connection.query('select * from user', function (err, rows, fields) {
