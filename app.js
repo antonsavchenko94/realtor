@@ -36,6 +36,10 @@ app.get('/api/adverts', function (req, res) {
     db.adverts(res);
 });
 
+app.get('/api/advert', function (req, res) {
+    db.advert(req,res);
+});
+
 //app.get('/api/adverts', function (req, res) {
 //    res.send(db.json);
 //});

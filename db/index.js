@@ -47,5 +47,5 @@ module.exports = {
                 res.send(JSON.stringify(rows));
             });
         }
-    },
+    }
 };
