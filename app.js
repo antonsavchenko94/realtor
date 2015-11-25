@@ -38,6 +38,10 @@ app.get('/advert', function (req, res){
     });
 });
 
+app.get('/service', function (req, res){
+    res.render('service');
+});
+
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function(){
     console.log("Server start on port  " + app.get('port'));
