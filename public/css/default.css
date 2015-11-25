@@ -43,14 +43,14 @@ h1 {float:left;font:2.8em Calibri,Verdana,sans-serif;margin-top:60px;line-height
 h1 a {color:#7BAF0A;}
 h1 a strong {color:#fff;}
 p.tagline {float:left;clear:both;margin-left:1px;font-size:.9em;font-weight:bold;color:#fff;text-transform:uppercase;}
-h2 {clear:both;font:2.1em Calibri,Arial,Verdana,sans-serif;margin-bottom:6px;letter-spacing:-1px;}
+h2 {font:2.1em Calibri,Arial,Verdana,sans-serif;margin-bottom:6px;letter-spacing:-1px;}
 h3 {clear:both;font-size:1.4em;color:#333;}
 #secondaryContent h3 {font-size:1.2em;color:#111;margin-bottom:6px;}
 #secondaryContent h4 {font-size:1.1em;color:#1B3C52;padding:0 0 12px 6px;}
 #footerContent h4 {color:#eee;margin-bottom:6px;clear:both;font-size:1.2em;color:#fff;}
 #footerContent h5 {font-size:.9em;color:#67920D;font-weight:normal;}
 
-#contentArea p {clear:both;font-size:1.1em;line-height:1.4em;margin-bottom:12px;color:black;}
+/*#contentArea p {clear:both;font-size:1.1em;line-height:1.4em;margin-bottom:12px;color:black;}*/
 #contentArea p a {font-weight:bold;color:#67920D;}
 #contentArea p a:hover {text-decoration:underline;}
 #contentArea blockquote p {color:#555;padding-left:28px;margin-bottom:16px;background:url(../img/quote-bg.gif) 0 4px no-repeat;}

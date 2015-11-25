@@ -1,0 +1,91 @@
+/*.btn {*/
+    /*background: #34d960;*/
+    /*background-image: -webkit-linear-gradient(top, #34d960, #178cd4);*/
+    /*background-image: -moz-linear-gradient(top, #34d960, #178cd4);*/
+    /*background-image: -ms-linear-gradient(top, #34d960, #178cd4);*/
+    /*background-image: -o-linear-gradient(top, #34d960, #178cd4);*/
+    /*background-image: linear-gradient(to bottom, #34d960, #178cd4);*/
+    /*-webkit-border-radius: 28;*/
+    /*-moz-border-radius: 28;*/
+    /*border-radius: 28px;*/
+    /*font-family: Arial;*/
+    /*color: #ffffff;*/
+    /*font-size: 20px;*/
+    /*padding: 10px 20px 10px 20px;*/
+    /*text-decoration: none;*/
+/*}*/
+
+/*.btn:hover {*/
+    /*background: #3cfccc;*/
+    /*background-image: -webkit-linear-gradient(top, #3cfccc, #3498db);*/
+    /*background-image: -moz-linear-gradient(top, #3cfccc, #3498db);*/
+    /*background-image: -ms-linear-gradient(top, #3cfccc, #3498db);*/
+    /*background-image: -o-linear-gradient(top, #3cfccc, #3498db);*/
+    /*background-image: linear-gradient(to bottom, #3cfccc, #3498db);*/
+    /*text-decoration: none;*/
+/*}*/
+
+#tittle, #price {
+    float: left;
+    width: 50%;
+}
+
+
+.news .description{
+    font-size:14px;
+    line-height:150%;
+    margin:20px ;
+    text-align: justify;
+}
+
+.news{
+    float: left;
+    width: 600px;
+    background-color: #ececec;
+    min-height: 300px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 10px 0 0 50px;
+
+}
+.news h1{
+    margin: 10px;
+    text-align: center;
+}
+.news span{
+    font-size: 12px;
+    font-style: oblique;
+}
+.news a{
+    font-size: 20px;
+    color:#2405fa;
+    position: relative;
+    left: 200px;
+    text-decoration: none;
+
+}
+.news a:hover{
+    font-size: 20px;
+    color:#2405fa;
+    position: relative;
+    left: 200px;
+    text-decoration: none;
+    border:2px solid #a59a9a;
+}
+.news img {
+    display: block;
+    width: 200px;
+    border: 7px double #2304fb;
+    height: 150px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.7);
+    -moz-box-shadow: inset 2px 2px 5px rgba(70,70,70,0.7);
+    -webkit-box-shadow: inset 2px 2px 5px rgba(70,257,255,0.7);
+    margin: 10px;
+    float: left;
+}
+
+#map{
+    width: 600px;
+    height: 300px;
+}

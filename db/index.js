@@ -1,17 +1,17 @@
 var mysql = require('mysql');
 
-var connection  = mysql.createConnection({
-        host        :   'sql4.freemysqlhosting.net',
-        user        :   'sql496545',
-        password    :   'c2HXNikVMn',
-        database    :   'sql496545'
-    });
 //var connection  = mysql.createConnection({
-//    host        :   'localhost',
-//    user        :   'root',
-//    password    :   'BanderaMozli1994',
-//    database    :   'company'
-//});
+//        host        :   'sql4.freemysqlhosting.net',
+//        user        :   'sql496545',
+//        password    :   'c2HXNikVMn',
+//        database    :   'sql496545'
+//    });
+var connection  = mysql.createConnection({
+    host        :   'localhost',
+    user        :   'root',
+    password    :   'BanderaMozli1994',
+    database    :   'company'
+});
 
 module.exports = {
     users: function (res) {
@@ -48,5 +48,24 @@ module.exports = {
                 res.send(JSON.stringify(rows));
             });
         }
+    },
+    advertsNotJson: function(f){
+        var query = connection.query('select * from advert', function (err, rows, fields) {
+            if (err) throw err;
+            obj = rows;
+            f(rows);
+        });
+    },
+    singleAdvert: function(req ,f){
+        if(req.param('id')){
+            var query = connection.query('select * from advert where advert_id ='+req.param('id'), function (err, rows, fields) {
+                if (err) throw err;
+                obj = rows;
+                f(rows);
+            });
+        }else{
+            throw "ERROR HA-HA";
+        }
     }
+
 };
