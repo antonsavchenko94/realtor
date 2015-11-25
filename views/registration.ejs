@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/default.css" title="default" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title><%= tittle %></title>
+    <!-- jQuery -->
+    <!--<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>-->
+    <!-- jQuery slider plugin -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/easySlider1.5.js" type="text/javascript" ></script>
+</head>
+
+
+<body id="home">
+<div id="wrapper">
+
+    <div id="header">
+        <!-- The name of your website -->
+        <h1><a href="index.html"><strong>Компанія</strong>Нерухомості</a></h1>
+        <!-- Tagline -->
+        <p class="tagline">На благо людям</p>
+        <ul>
+            <!-- Navigation - the current page is highlighted with css class "current". -->
+            <li><a href="/index">Домівка <span class="navi-description">Домівка</span></a></li>
+            <li><a href="services.html">Сервіси</a></li>
+            <li><a href="about.html">Зворотній зв'язок</a></li>
+            <li class="current"><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+        </ul><!-- End navigation -->
+
+        <!-- Search -->
+        <div id="searchbox">
+            <form action="" id="search" method="post">
+                <fieldset>
+                    <input type="submit" id="searchSubmit" value="Пошук" />
+                    <input type="text" name="searchTerm" size="20" />
+                </fieldset>
+            </form>
+        </div><!-- End search -->
+    </div><!-- End header -->
+
+    <div id="contentArea">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Форма реєстрації</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Прізвище</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="Васельчук" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Ім'я</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="Олег" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Номер телефону</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+                        <span class="help-block">наприклад 0964314594</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Email</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+                        <span class="help-block">help</span>
+                    </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="passwordinput"> Введіть пароль</label>
+                    <div class="col-md-4">
+                        <input id="passwordinput" name="passwordinput" type="password" placeholder="" class="form-control input-md" required="">
+                        <span class="help-block">пароль не менше 6 символів</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Підтвердіть пароль</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md" required="">
+                        <span class="help-block">help</span>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="button1id">Дані вірні ?</label>
+                    <div class="col-md-8">
+                        <button id="button1id" name="button1id" class="btn btn-success">Все вірно</button>
+                        <button id="button2id" name="button2id" class="btn btn-danger">Ні</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div><!-- End contentArea -->
+
+
+    <div id="footerContent">
+        <div class="footerColumn">
+            <a href="http://themeforest.net/item/businexx/29634?ref=myTheme">
+                <!-- Change your own image, size 275x80 -->
+                <img src="img/promo3.jpg" alt="" title="" /></a>
+            <!--<h4>Check out my other template</h4>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, tempor incididunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <a href="http://themeforest.net/item/businexx/29634?ref=myTheme" class="box">Businexx Theme...</a>-->
+        </div><!-- End footerColumn -->
+
+        <div class="footerColumn">
+            <img src="img/promo1.jpg" alt="" title="" /><!-- Change your own image, size 275x80 -->
+            <!--<h4>Consectetur Adipisicing</h4>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <a href="#">sed do eiusmod</a> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <a href="#" class="box">Read More...</a>-->
+        </div><!-- End footerColumn -->
+
+        <div class="footerColumn last">
+            <!-- Contact information -->
+            <!--<h5>Address:</h5> <p>123 Street Road, City 12345</p>-->
+            <!--<h5>Phone:</h5> <p>123.456.7890</p>-->
+            <!--<h5>E-mail:</h5> <p><a href="mailto:contact@company.com">contact@company.com</a></p>-->
+            <!--<a href="contact.html" class="box">Contact Form</a>-->
+        </div><!-- End footerColumn -->
+
+        <div id="footerLinks">
+            <p><a href="index.html">Домівка</a> | <a href="services.html">Сервіси</a>  | <a href="about.html">Про нас</a></p>
+
+            <p class="right">Наше майно.</p>
+        </div><!-- End footerLinks -->
+    </div><!-- End footerContent -->
+</div><!-- End wrapper -->
+
+</body>
+</html>
