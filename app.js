@@ -14,7 +14,9 @@ app.set('views', __dirname+'/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('index', {title:'Test'});
+    db.advertsNotJson(function(rows){
+        res.render('index', {title:'Головна', adverts:rows});
+    });
 });
 
 app.get('/registration', function (req, res) {
@@ -25,7 +27,7 @@ app.get('/adverts', function (req, res) {
     res.render('adverts', {title:'Test'});
 });
 app.get('/show', function (req, res){
-    var obj = db.advertsNotJson(function(rows){
+    db.advertsNotJson(function(rows){
         //console.log(rows);
         res.render('show', {title:'Оголошення', adverts:rows});
     });
