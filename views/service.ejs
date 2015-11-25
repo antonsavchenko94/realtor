@@ -22,11 +22,11 @@
 		<p class="tagline">На благо людям</p>
 		<ul>
 			<!-- Navigation - the current page is highlighted with css class "current". -->
-			<li><a href="index.html">Домівка <span class="navi-description">Домівка</span></a></li>
-			<li class="current"><a href="/show">Оголошення</a></li>
-			<li><a href="services.html">Сервіси</a></li>
+			<li><a href="/">Домівка <span class="navi-description">Домівка</span></a></li>
+			<li><a href="/show">Оголошення</a></li>
+			<li class="current"><a href="/service">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
-			<li><a href="registration.php">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->
@@ -41,54 +41,39 @@
 	</div><!-- End header -->
 
 	<div id="contentArea">
-		<ul class="service-l">
-			<li class="service-l-i">
-				<a class="service-l-i-link novisited" id="delivery_button_2" href="#" onclick="document.fireEvent('clickDialogLink',{extend_event:[{name:'eventLabel',value:'deliveryInfo'}, {name:'eventContent',value:'Новая Почта'}]});">
-					<a href="https://novaposhta.ua"><img class="service-l-i-img" src="img/1.png" alt="" ></a>
-					<span class="service-l-i-text xhr">Нова Пошта</span>
-					</a>
-				<script type="text/javascript">
-					payments_deliveries.addContent($('delivery_button_2'), $('delivery_info_2'));
-				</script>
-			</li>
-			<li class="service-l-i">
-				<a class="service-l-i-link novisited" id="delivery_button_4" href="#" onclick="document.fireEvent('clickDialogLink',{extend_event:[{name:'eventLabel',value:'deliveryInfo'}, {name:'eventContent',value:'Адресная доставка по Киеву'}]});">
-					<a href="http://turman.com.ua"><img class="service-l-i-img" src="img/2.png" alt=""></a>
-					<span class="service-l-i-text xhr">Послуги кур'єра</span>
-				</a>
-				<script type="text/javascript">
-					payments_deliveries.addContent($('delivery_button_4'), $('delivery_info_4'));
-				</script>
-			</li>
-			<li class="service-l-i">
-				<a class="service-l-i-link novisited" id="delivery_button_7" href="#" onclick="document.fireEvent('clickDialogLink',{extend_event:[{name:'eventLabel',value:'deliveryInfo'}, {name:'eventContent',value:'Мист Экспресс'}]});">
-					<a href="https://meest-express.com.ua/"><img class="service-l-i-img" src="img/3.png" alt=""></a>
-					<span class="service-l-i-text xhr">Міст Експрес</span>
-				</a>
-				<script type="text/javascript">
-					payments_deliveries.addContent($('delivery_button_7'), $('delivery_info_7'));
-				</script>
-			</li>
-			<li class="service-l-i">
-				<a class="service-l-i-link novisited" id="delivery_button_9" href="#" onclick="document.fireEvent('clickDialogLink',{extend_event:[{name:'eventLabel',value:'deliveryInfo'}, {name:'eventContent',value:'Из выставочного зала'}]});">
-					<a href="http://malyar-kiev.com.ua"><img class="service-l-i-img" src="img/4.png" alt=""></a>
-					<span class="service-l-i-text xhr">Послуги маляра</span>
-				</a>
-				<script type="text/javascript">
-					payments_deliveries.addContent($('delivery_button_9'), $('delivery_info_9'));
-				</script>
-			</li>
-			<li class="service-l-i">
-				<a class="service-l-i-link novisited" id="delivery_button_18" href="#" onclick="document.fireEvent('clickDialogLink',{extend_event:[{name:'eventLabel',value:'deliveryInfo'}, {name:'eventContent',value:'Из выставочного зала (Бытовая техника и интерьер)'}]});">
-					<a href="http://www.remont-dom.com.ua"><img class="service-l-i-img" src="img/5.png" alt=""></a>
-					<span class="service-l-i-text xhr">Ремонт під люч</span>
-				</a>
-				<script type="text/javascript">
-					payments_deliveries.addContent($('delivery_button_18'), $('delivery_info_18'));
-				</script>
-			</li>
-		</ul>
-
+		<div class="imgserv">
+			<figure>
+				<a href="https://novaposhta.ua"><img class="service-l-i-img" height="174" width="174" src="img/1.png" alt="" ></a>
+				<figcaption> Нова Пошта</figcaption>
+			</figure>
+			<figure>
+				<a href="http://turman.com.ua"><img class="service-l-i-img" height="174" width="174" src="img/2.png" alt=""></a>
+				<figcaption> Послуги кур'єра</figcaption>
+			</figure>
+			<figure>
+				<a href="https://meest-express.com.ua/"><img class="service-l-i-img" height="174" width="174" src="img/3.png" alt=""></a>
+				<figcaption>Міст Експрес</figcaption>
+			</figure>
+			<figure>
+				<a href="http://malyar-kiev.com.ua"><img class="service-l-i-img" height="174" width="174" src="img/4.png" alt=""></a>
+				<figcaption>Послуги маляра</figcaption>
+			</figure>
+			<figure>
+				<a href="http://www.remont-dom.com.ua"><img class="service-l-i-img" height="174" width="174" src="img/5.png" alt=""></a>
+				<figcaption>Ремонт під люч</figcaption>
+			</figure>
+			<figure>
+				<a href="http://www.wds.ua/ua/"><img class="service-l-i-img" height="174" width="174" src="img/wds_logo_slogan_ua.jpg" alt=""></a>
+				<figcaption>Вікна WDS</figcaption>
+			</figure>
+			<figure>
+				<a href="http://epicentrk.com.ua/"><img class="service-l-i-img" height="174" width="174" src="img/epik.png" alt=""></a>
+				<figcaption>Будівельні матріали</figcaption>
+			</figure>
+			<figure>
+				<a href="http://zahist-prava.com.ua/poslugi.htm"><img class="service-l-i-img" height="174" width="174" src="img/low.png" alt=""></a>
+				<figcaption>Юридичні послуги</figcaption>
+			</figure>
 		</div>
 	</div><!-- End contentArea -->
 
