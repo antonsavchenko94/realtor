@@ -22,11 +22,11 @@
 		<p class="tagline">На благо людям</p>
 		<ul>
 			<!-- Navigation - the current page is highlighted with css class "current". -->
-			<li><a href="index.html">Домівка <span class="navi-description">Домівка</span></a></li>
+			<li><a href="/">Домівка <span class="navi-description">Домівка</span></a></li>
 			<li class="current"><a href="/show">Оголошення</a></li>
-			<li><a href="services.html">Сервіси</a></li>
+			<li><a href="/service">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
-			<li><a href="registration.php">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->
@@ -41,6 +41,56 @@
 	</div><!-- End header -->
 
 	<div id="contentArea">
+		<div class="filters-block">
+			<div class="left">
+				<h4>Поиск объектов</h4>
+			</div>
+
+
+			<div id="edit-field-deal-type-wrapper" class="views-exposed-widget">
+				<label for="edit-field-deal-type">Тип сделки</label>
+				<div class="views-widget">
+					<div class="form-item form-type-select">
+						<select id="edit-field-deal-type" name="cat_type" class="form-select">
+							<option selected="" value="sale">Продажа</option>
+							<option value="rent">Аренда</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div id="edit-field-realty_type-wrapper" class="views-exposed-widget">
+				<label for="edit-field-realty_type">Тип недвижимости</label>
+				<div class="views-widget">
+					<div class="form-item form-type-select">
+						<select name="realty_type" id="edit-field-realty_type" class="form-select"><option value="">Все типы</option><option value="house_rent">Дом</option><option value="flat_rent">Квартира</option><option value="commerce_rent">Коммерческая недвижимость</option></select>								</div>
+				</div>
+			</div>
+
+			<div id="edit-field-price-wrapper" class="views-exposed-widget">
+				<label for="edit-field-price">Стоимость</label>
+				<div class="views-widget">
+					<div class="form-item form-type-select">
+						<select name="price" id="edit-field-price" class="form-select"><option value="">Любая</option><option value="under_500">менее 500 €</option><option value="from_500_to_1000">от 500 до 1 000 €</option><option value="from_1000">от 1 000 €</option></select>								</div>
+				</div>
+			</div>
+
+
+			<div id="edit-field-place-wrapper" class="views-exposed-widget">
+				<label for="edit-field-place">Расположение</label>
+				<div class="views-widget">
+					<div class="form-item form-type-select form-item-field-agent-tid">
+						<select name="place" id="edit-field-place" class="form-select"><option value="">Любой регион</option><option value="7">Любляна</option><option value="8">Пригород Любляны</option><option value="9">Блед</option><option value="10">Приморский регион</option></select>								</div>
+				</div>
+			</div>
+
+			<!--
+            <div class="views-exposed-widget views-submit-button">
+                <input id="edit-submit-browse-cars" class="form-submit" type="submit" value="Искать" name="">
+            </div>
+            -->
+
+		</div>
 		<div>
 			<%adverts.forEach(function(advert){%>
 			<div class="news">
