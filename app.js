@@ -19,6 +19,19 @@ app.get('/', function (req, res) {
 app.get('/adverts', function (req, res) {
     res.render('adverts', {title:'Test'});
 });
+app.get('/show', function (req, res){
+    var obj = db.advertsNotJson(function(rows){
+        //console.log(rows);
+        res.render('show', {title:'Оголошення', adverts:rows});
+    });
+});
+
+app.get('/advert', function (req, res){
+    var obj = db.singleAdvert(req, function(rows){
+        console.log(rows);
+        res.render('advert', {advert:rows});
+    });
+});
 
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function(){
