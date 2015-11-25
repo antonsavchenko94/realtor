@@ -16,6 +16,11 @@ app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
     res.render('index', {title:'Test'});
 });
+
+app.get('/registration', function (req, res) {
+    res.render('registration', {tittle:'Registration'});
+});
+
 app.get('/adverts', function (req, res) {
     res.render('adverts', {title:'Test'});
 });
