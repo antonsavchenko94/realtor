@@ -1,0 +1,3 @@
+D:\study\project>git gui
+
+D:\study\project>git pull https://github.com/antonsavchenko94/realtor.git

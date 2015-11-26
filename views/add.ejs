@@ -1,0 +1,204 @@
+<!DOCTYPE>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/default.css" title="default" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" title="default" />
+	<!--<link rel="stylesheet" type="text/css" href="css/add.css" title="default" />-->
+	<!--<link rel="stylesheet" type="text/css" href="css/screen.css" title="default" />-->
+	<!--<link rel="stylesheet" type="text/css" href="css/responsive-sidebars.css" title="default" />-->
+	<!--<link rel="stylesheet" type="text/css" href="css/responsive-screen-layout.css" title="default" />-->
+	<link rel="shortcut icon" href="img/favicon.ico" />
+
+	<!-- jQuery -->
+	<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<!-- jQuery slider plugin -->
+	<script src="js/easySlider1.5.js" type="text/javascript" ></script>
+</head>
+
+
+<body id="home">
+<div id="wrapper">
+
+	<div id="header">
+		<!-- The name of your website -->
+		<h1><a href="index.html"><strong>Компанія</strong>Нерухомості</a></h1>
+		<!-- Tagline -->
+		<p class="tagline">На благо людям</p>
+		<ul>
+			<!-- Navigation - the current page is highlighted with css class "current". -->
+			<li><a href="/">Домівка <span class="navi-description">Домівка</span></a></li>
+			<li><a href="/show">Оголошення</a></li>
+			<li class="current"><a href="/service">Сервіси</a></li>
+			<li><a href="about.html">Зворотній зв'язок</a></li>
+			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+		</ul><!-- End navigation -->
+
+		<!-- Search -->
+		<div id="searchbox">
+			<form action="" id="search" method="post">
+				<fieldset>
+					<input type="submit" id="searchSubmit" value="Пошук" />
+					<input type="text" name="searchTerm" size="20" />
+				</fieldset>
+			</form>
+		</div><!-- End search -->
+	</div><!-- End header -->
+
+	<div id="contentArea">
+		<div class="form-add-dom">
+			<div class="rows">
+				<label class="label" for="cat" title="Обов'язкове поле">
+					Категорія:<ins>*</ins>
+				</label>
+				<div class="select">
+
+					<select name="cat" id="cat" class="span3 " title="Обов'язкове поле ">
+						<option value="1" label="квартири" selected="selected">квартири</option>
+						<option value="4" label="доми">доми</option>
+						<option value="13" label="комерційна">комерційна</option>
+						<option value="10" label="офіси">офіси</option>
+						<option value="24" label="земельні ділянки">земельні ділянки</option>
+						<option value="30" label="гаражі">гаражі</option>
+					</select>            </div>
+			</div>
+
+			<div class="rows">
+				<label class="label" for="realty_type" title="Обов'язкове поле">
+					Тип нерухомості:<ins>*</ins>
+				</label>
+				<div class="select">
+
+					<select name="realty_type" id="realty_type" class="span3 " title="Обов'язкове поле ">
+						<option value="3" label="комната">кімната</option>
+						<option value="2" label="квартира" selected="selected">квартира</option>
+					</select>            </div>
+			</div>
+			<div class="rows">
+				<label class="label" for="advert_type" title="Обов'язкове поле">
+					Тип операції:<ins>*</ins>
+				</label>
+				<div class="select">
+
+					<select name="advert_type" id="advert_type" class="span3 " title="Обов'язкове поле ">
+						<option value="1" label="продажа" selected="selected">продаж</option>
+						<option value="3" label="довготривала оренда">довготривала оренда</option>
+						<option value="4" label="подобова оренда">оренда посуточная</option>
+					</select>            </div>
+			</div>
+			<div class="rows">
+				<label class="label" for="state" title="Обов'язкове поле">
+					Місто:<ins>*</ins>
+				</label>
+				<div class="select">
+
+					<select name="state" id="state" class="span3 " title="Обов'язкове поле " requiredid="1">
+						<option value="0" label="Виберіть місто">Виберіть місто</option>
+						<option value="1" label="Вінниця">Вінниця</option>
+						<option value="18" label="Волынская">Волынская</option>
+						<option value="11" label="Днепропетровская">Днепропетровская</option>
+						<option value="13" label="Донецкая">Донецкая</option>
+						<option value="2" label="Житомирская">Житомирская</option>
+						<option value="22" label="Закарпатская">Закарпатская</option>
+						<option value="14" label="Запорожская">Запорожская</option>
+						<option value="15" label="Ивано-Франковская">Ивано-Франковская</option>
+						<option value="10" label="Киевская">Киевская</option>
+						<option value="16" label="Кировоградская">Кировоградская</option>
+						<option value="17" label="Луганская">Луганская</option>
+						<option value="5" label="Львовская">Львовская</option>
+						<option value="19" label="Николаевская">Николаевская</option>
+						<option value="12" label="Одесская">Одесская</option>
+						<option value="20" label="Полтавская">Полтавская</option>
+						<option value="21" label="Республика Крым">Республика Крым</option>
+						<option value="9" label="Ровенская">Ровенская</option>
+						<option value="8" label="Сумская">Сумская</option>
+						<option value="3" label="Тернопольская">Тернопольская</option>
+						<option value="7" label="Харьковская">Харьковская</option>
+						<option value="23" label="Херсонская">Херсонская</option>
+						<option value="4" label="Хмельницкая">Хмельницкая</option>
+						<option value="24" label="Черкасская">Черкасская</option>
+						<option value="6" label="Черниговская">Черниговская</option>
+						<option value="25" label="Черновицкая">Черновицкая</option>
+					</select>            </div>
+			</div>
+
+
+			<div class="rows">
+				<label class="label" for="street" id="street_label">
+					Вулиця:
+				</label>
+				<div class="input">
+
+					<div class="dijit dijitReset dijitInlineTable dijitLeft span3 dijitTextBox dijitComboBox" id="widget_street" role="combobox" dir="ltr" widgetid="street" aria-labelledby="street_label"><div class="dijitReset dijitValidationContainer"></div><div class="dijitReset dijitInputField dijitInputContainer"><input class="dijitReset dijitInputInner" name="street" type="text" autocomplete="off" dojoattachpoint="textbox,focusNode" role="textbox" aria-haspopup="true" aria-invalid="false" id="street" tabindex="0" value=""></div></div>
+				</div>
+			</div>
+
+
+			<div class="rows" id="_element-characteristic-209">
+				<label class="label" for="characteristic-209" title="Обов'язкове поле">
+					комнат:<ins class="ins">*</ins>                        </label>
+				<div class="input rooms_count">
+
+					<div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitValidationTextBox span2" id="widget_characteristic-209" role="presentation" dir="ltr" widgetid="characteristic-209"></div><div class="dijitReset dijitInputField dijitInputContainer"><input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" autocomplete="off" name="characteristic[209]" type="text" aria-invalid="false" id="characteristic-209" tabindex="0" title="Обов'язкове поле " value="" requiredid="3"></div></div>                         </div>
+		</div>
+
+
+		<div class="rows" id="_element-characteristic-214">
+			<label class="label" for="characteristic-214" title="Обов'язкове поле">
+				загальна:<ins class="ins">*</ins>                        </label>
+			<div class="input total_square_meters">
+
+				<div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitValidationTextBox span2" id="widget_characteristic-214" role="presentation" dir="ltr" widgetid="characteristic-214"><div class="dijitReset dijitInputField dijitInputContainer"><input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" autocomplete="off" name="characteristic[214]" type="text" aria-invalid="false" id="characteristic-214" tabindex="0" title="Обов'язкове поле " value="" requiredid="4"></div></div> <em>кв. м</em>                        </div>
+		</div>
+
+		<div class="rows" id="_element-characteristic-216">
+			<label class="label" for="characteristic-216">
+				жива:                        </label>
+			<div class="input living_square_meters">
+
+				<div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitValidationTextBox span2" id="widget_characteristic-216" role="presentation" dir="ltr" widgetid="characteristic-216"><div class="dijitReset dijitInputField dijitInputContainer"><input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" autocomplete="off" name="characteristic[216]" type="text" aria-invalid="false" id="characteristic-216" tabindex="0" value=""></div></div> <em>кв. м</em>                        </div>
+		</div>
+
+		<div class="rows" id="_element-characteristic-218">
+			<label class="label" for="characteristic-218">
+				кухня:                        </label>
+			<div class="input kitchen_square_meters">
+
+				<div class="dijit dijitReset dijitInlineTable dijitLeft dijitTextBox dijitValidationTextBox span2" id="widget_characteristic-218" role="presentation" dir="ltr" widgetid="characteristic-218"></div><div class="dijitReset dijitInputField dijitInputContainer"><input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" autocomplete="off" name="characteristic[218]" type="text" aria-invalid="false" id="characteristic-218" tabindex="0" value=""></div></div> <em>кв. м</em>                        </div>
+	</div>
+
+</div><!-- End contentArea -->
+
+
+	<div id="footerContent">
+		<div class="footerColumn">
+			<a href="http://themeforest.net/item/businexx/29634?ref=myTheme">
+				<!-- Change your own image, size 275x80 -->
+				<img src="img/promo3.jpg" alt="" title="" /></a>
+			<!--<h4>Check out my other template</h4>-->
+			<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, tempor incididunt. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <a href="http://themeforest.net/item/businexx/29634?ref=myTheme" class="box">Businexx Theme...</a>-->
+		</div><!-- End footerColumn -->
+
+		<div class="footerColumn">
+			<img src="img/promo1.jpg" alt="" title="" /><!-- Change your own image, size 275x80 -->
+			<!--<h4>Consectetur Adipisicing</h4>-->
+			<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <a href="#">sed do eiusmod</a> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <a href="#" class="box">Read More...</a>-->
+		</div><!-- End footerColumn -->
+
+		<div class="footerColumn last">
+			<!-- Contact information -->
+			<!--<h5>Address:</h5> <p>123 Street Road, City 12345</p>-->
+			<!--<h5>Phone:</h5> <p>123.456.7890</p>-->
+			<!--<h5>E-mail:</h5> <p><a href="mailto:contact@company.com">contact@company.com</a></p>-->
+			<!--<a href="contact.html" class="box">Contact Form</a>-->
+		</div><!-- End footerColumn -->
+
+		<div id="footerLinks">
+			<p><a href="index.html">Домівка</a> | <a href="services.html">Сервіси</a>  | <a href="about.html">Про нас</a></p>
+
+			<p class="right">Наше майно.</p>
+		</div><!-- End footerLinks -->
+	</div><!-- End footerContent -->
+</div><!-- End wrapper -->
+
+</body>
+</html>

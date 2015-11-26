@@ -46,6 +46,12 @@ app.get('/service', function (req, res){
 app.get('/registration', function (req, res){
     res.render('registration');
 });
+app.get('/add', function (req, res){
+    res.render('add');
+});
+app.get('/dodati', function (req, res){
+    res.render('dodati');
+});
 
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function(){
