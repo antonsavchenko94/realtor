@@ -66,6 +66,21 @@ module.exports = {
         }else{
             throw "ERROR HA-HA";
         }
+    },
+    saveUser:function(user){
+        var fullName = user.name.split(' ', 2);
+        var query = connection.query('select * from user', function (err, couunt, fl) {
+            if (err) throw err;
+            console.log(couunt);
+            connection.query('INSERT INTO user (user_id,first_name, last_name, phone, password, email) VALUES ('+ (couunt.length+1)+',\''+ fullName[0] +'\', \'' +
+                ''+ fullName[1] +'\', \'' +
+                ''+ user.phone +'\', \'' +
+                ''+ user.password +'\', \'' +
+                ''+ user.email +'\')', function(err, result) {
+                if (err) throw err;
+                console.log(result.insertId);
+            });
+        });
     }
 
 };

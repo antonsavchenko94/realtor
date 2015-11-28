@@ -1,14 +1,19 @@
 /**
  * Created by mozli on 08.11.2015.
  */
-var express = require('express');
-var path = require('path');
-var db = require('./db');
+var express = require('express'),
+    path = require('path'),
+    db = require('./db'),
+    bodyParser = require('body-parser');
 
 var app = express();
 var count = 0;
 
 app.use(express.static(__dirname + '/public'));
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    extended: true
+}));
 
 app.set('views', __dirname+'/views');
 app.set('view engine', 'ejs');
@@ -18,7 +23,9 @@ app.get('/', function (req, res) {
         res.render('index', {title:'Головна', adverts:rows});
     });
 });
-
+app.post('/user/registration', function(req,res){
+   db.saveUser(req.body.user);
+});
 app.get('/registration', function (req, res) {
     res.render('registration', {tittle:'Registration'});
 });

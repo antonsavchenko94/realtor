@@ -46,22 +46,22 @@
                 </div>
 
                 <div id="register" class="animate form">
-                    <form  action="mysuperscript.php" autocomplete="on">
+                    <form  action="/user/registration" autocomplete="on" method="post">
                         <h1> Приєднатися </h1>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Ім'я та прізвище*</label>
-                            <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Петро Петренко" />
+                            <input id="usernamesignup" name="user[name]" required="required" type="text" placeholder="Петро Петренко" />
                         </p>
                         <p>
                             <label for="usernamesignup" class="uname" data-icon="u">Номер телефону*</label>
-                            <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="0471234567" />
+                            <input id="usernamesignup" name="user[phone]" required="required" type="text" placeholder="0471234567" />
                         </p>						<p>
                             <label for="emailsignup" class="youmail" data-icon="e" > Електронна адреса*</label>
-                            <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="petro.petrenko@mail.ua"/>
+                            <input id="emailsignup" name="user[email]" required="required" type="email" placeholder="petro.petrenko@mail.ua"/>
                         </p>
                         <p>
                             <label for="passwordsignup" class="youpasswd" data-icon="p">Пароль* </label>
-                            <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="Abc123"/>
+                            <input id="passwordsignup" name="user[password]" required="required" type="password" placeholder="Abc123"/>
                         </p>
                         <p>
                             <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Підтвердіть пароль* </label>
