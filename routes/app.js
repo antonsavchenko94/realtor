@@ -1,5 +1,5 @@
+var db = require('../db');
 module.exports = function(app, passport) {
-    var db = require('../db')
     app.get('/', function (req, res) {
         db.advertsNotJson(function(rows){
             res.render('index', {title:'Головна', adverts:rows});
@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
     });
 
     app.post('/user/login', passport.authenticate('local-login', {
-        successRedirect : '/service', // redirect to the secure profile section
+        //successRedirect : '/service', // redirect to the secure profile section
         failureRedirect : '/registration', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }),function(req, res) {
@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
             req.session.cookie.expires = false;
             console.log('MAX AGE FALSE');
         }
-        res.redirect('/');
+        res.redirect('back');
     });
 
     app.get('/registration', function (req, res) {
@@ -36,14 +36,14 @@ module.exports = function(app, passport) {
     app.get('/show', function (req, res){
         db.advertsNotJson(function(rows){
             //console.log(rows);
-            res.render('show', {title:'Оголошення', adverts:rows});
+            res.render('show', {title:'Оголошення', adverts:rows, user:req.user});
         });
     });
 
     app.get('/advert', function (req, res){
-        var obj = db.singleAdvert(req, function(rows){
-            console.log(rows);
-            res.render('advert', {advert:rows});
+        var obj = db.singleAdvert(req, function(advert, own){
+            console.log(own);
+            res.render('advert', {advert:advert, user:req.user, userOwn:own});
         });
     });
 

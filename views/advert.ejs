@@ -44,8 +44,22 @@
 	</div><!-- End header -->
 
 	<div id="contentArea">
+		<div id="user">
+			<% if (user){%>
+			<p>
+				Ви увійшли на сайт !
+			</p>
+			<h5>User name: <%=user.first_name%></h5>
+			<%} else {%>
+			<p>
+				Ви не авторизовані!
+			<p>
+				<a href="/registration">Авторизуйтесь</a>
+			</p>
+			</p>
+			<%}%>
+		</div>
 		<div>
-
 			<div class="news">
 				<div class ="tittle">
 					<h2 id="tittle"><%=advert.tittle%></h2>
@@ -55,6 +69,7 @@
 				<p class="description">
 					<%=advert.description%>
 				</p>
+				<!--<label id="user_own"><a>Звяжіться з копупцем</a></label>-->
 			</div>
 
 		</div>
@@ -63,6 +78,10 @@
 
 
 	<div id="footerContent">
+		<div id="user_own">
+			<h4>Автор <%= userOwn[0].first_name%></h4>
+			<h4>Телефон: <%= userOwn[0].phone%></h4>
+		</div>
 		<div id="map"></div>
 	</div><!-- End footerContent -->
 </div><!-- End wrapper -->

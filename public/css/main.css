@@ -101,3 +101,21 @@
     margin-bottom: 10px; /* Отступ снизу */
     float: left;
 }
+.filters-block {
+    display: flex;
+    margin: 10px 1px 30px;
+}
+input#filter_button {
+    margin-top: 12px;
+    margin-left: 5px;
+}
+div#user {
+    display: inline-block;
+    float: right;
+    margin: 60px;
+}
+div#user_own {
+    float: right;
+    margin-right: 100px;
+    margin-top: 10px;
+}
