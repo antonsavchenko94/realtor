@@ -45,10 +45,18 @@ module.exports = {
         if(req.param("id")){
             var query = connection.query('select * from advert where advert_id ='+req.param("id"), function (err, rows, fields) {
                 if (err) throw err;
-                res.send(JSON.stringify(rows));
+                res.send(rows);
             });
         }
     },
+    advertSecond:function (req, res) {
+        console.log(req.param("deal"));
+            var query = connection.query('select * from advert where deal_type =\''+req.param("deal")+'\' and realty_type=\''+req.param("realty")+'\'', function (err, rows, fields) {
+                if (err) throw err;
+                res.send(rows);
+            });
+    },
+
     advertsNotJson: function(f){
         var query = connection.query('select * from advert', function (err, rows, fields) {
             if (err) throw err;
@@ -58,10 +66,12 @@ module.exports = {
     },
     singleAdvert: function(req ,f){
         if(req.param('id')){
-            var query = connection.query('select * from advert where advert_id ='+req.param('id'), function (err, rows, fields) {
+            var query = connection.query('select * from advert where advert_id ='+req.param('id'), function (err, advert, fields) {
                 if (err) throw err;
-                obj = rows;
-                f(rows);
+                connection.query('select * from user where user_id = ' +
+                    '(select user_id from advert where advert_id ='+req.param('id')+')',function (err, user, fields) {
+                    f(advert,user);
+                });
             });
         }else{
             throw "ERROR HA-HA";

@@ -1,3 +1,4 @@
+var db = require('../db');
 module.exports = function(app) {
     app.get('/api/users', function (req, res) {
         db.users(res);
@@ -11,5 +12,8 @@ module.exports = function(app) {
 
     app.get('/api/advert', function (req, res) {
         db.advert(req,res);
+    });
+    app.get('/api/advertajax', function (req, res) {
+        db.advertSecond(req,res);
     });
 };
