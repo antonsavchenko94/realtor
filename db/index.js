@@ -7,10 +7,10 @@ var mysql = require('mysql');
 //        database    :   'sql496545'
 //    });
 var connection  = mysql.createConnection({
-    host        :   'localhost',
-    user        :   'root',
-    password    :   'BanderaMozli1994',
-    database    :   'company'
+    host        :   'db4free.net',
+    user        :   'mozli',
+    password    :   'qwertyui',
+    database    :   'realtor_company'
 });
 
 module.exports = {
