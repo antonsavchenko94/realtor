@@ -9,7 +9,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     flash    = require('connect-flash');
 
-var port     = process.env.PORT || 8080;
+var port     = process.env.PORT || 3000;
 var app = express();
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
