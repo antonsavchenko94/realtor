@@ -21,10 +21,11 @@
 		<p class="tagline">На благо людям</p>
 		<ul>
 			<!-- Navigation - the current page is highlighted with css class "current". -->
-			<li class="current"><a href="index.html">Домівка <span class="navi-description">Домівка</span></a></li>
-			<li><a href="services.html">Сервіси</a></li>
+			<li class="current"><a href="/">Домівка <span class="navi-description">Домівка</span></a></li>
+			<li><a href="/show">Оголошення</a></li>
+			<li><a href="/service">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
-			<li><a href="registration.php">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->
@@ -44,12 +45,9 @@
 			<!-- Settings can be changed in "/js/easySlider1.5.js" -->
 			<div id="slider">
 				<ul>
-					<li><img src="img/slider/2.jpg" alt="" /></li>
-					<li>
-						<h2>Or write normal html here...</h2>
-						<!--<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>-->
-						<!--<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
-					</li>
+					<%adverts.forEach(function(advert){%>
+					<li><a href="/advert?id=<%=advert.advert_id%>"><img src="data:image/png;base64,<%=advert.image%>" alt="" /></a></li>
+					<%})%>
 				</ul>
 			</div><!-- End slider -->
 		</div><!-- End intro -->
