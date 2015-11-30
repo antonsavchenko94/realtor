@@ -16,4 +16,8 @@ module.exports = function(app) {
     app.get('/api/advertajax', function (req, res) {
         db.advertSecond(req,res);
     });
+
+    app.post('/api/user/registration', function(req,res){
+        db.saveUser(req.body.user);
+    });
 };
