@@ -1,17 +1,17 @@
 var mysql = require('mysql');
 
-//var connection  = mysql.createConnection({
-//        host        :   'sql4.freemysqlhosting.net',
-//        user        :   'sql496545',
-//        password    :   'c2HXNikVMn',
-//        database    :   'sql496545'
-//    });
 var connection  = mysql.createConnection({
-    host        :   'db4free.net',
-    user        :   'mozli',
-    password    :   'qwertyui',
-    database    :   'realtor_company'
-});
+        host        :   'sql4.freemysqlhosting.net',
+        user        :   'sql498232',
+        password    :   'm6MqzCIhvf',
+        database    :   'sql498232'
+    });
+//var connection  = mysql.createConnection({
+//    host        :   'db4free.net',
+//    user        :   'mozli',
+//    password    :   'qwertyui',
+//    database    :   'realtor_company'
+//});
 
 connection.connect(function(err) {
     if (err) {
