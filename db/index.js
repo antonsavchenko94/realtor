@@ -32,10 +32,15 @@ module.exports = {
     user:function (req, res) {
         try{
             if(req.param("password") && req.param("email")){
-                var query = connection.query('select * from user where password =\''+req.param("password")+'\' and email='+req.param("email"), function (err, rows, fields) {
+                var query = connection.query('select * from user where  email='+req.param("email"), function (err, rows, fields) {
                     if (err) throw err;
-                    if(rows[0]) res.send('Yes');
-                    else res.send('No');
+
+                    if(rows[0]){
+                    }
+                    if (!bcrypt.compareSync(req.param("password"), rows[0].password)){
+                        res.send('Yes');
+
+                    }else res.send('No');
                 });
             }
         }catch(err){
