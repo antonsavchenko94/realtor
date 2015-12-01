@@ -35,12 +35,13 @@ module.exports = {
                 var query = connection.query('select * from user where  email='+req.param("email"), function (err, rows, fields) {
                     if (err) throw err;
 
-                    if(rows[0]){
-                    }
-                    if (!bcrypt.compareSync(req.param("password"), rows[0].password)){
-                        res.send('Yes');
+                    if(rows[0]) {
 
-                    }else res.send('No');
+                        if (bcrypt.compareSync(req.param("password"), rows[0].password)) {
+                            res.send('Yes');
+
+                        } else res.send('No');
+                    }
                 });
             }
         }catch(err){
