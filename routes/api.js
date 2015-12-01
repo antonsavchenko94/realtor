@@ -18,6 +18,14 @@ module.exports = function(app) {
     });
 
     app.post('/api/user/registration', function(req,res){
-        db.saveUser(req.body.user);
+        db.saveUser(req.body.user, function(msg){
+            res.send(msg);
+        });
+    });
+
+    app.get('/api/userby', function(req,res){
+        db.userByid(req, function(user){
+            res.send(user);
+        });
     });
 };

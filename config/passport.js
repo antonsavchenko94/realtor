@@ -41,32 +41,38 @@ module.exports = function(passport) {
         'local-signup',
         new LocalStrategy({
             // by default, local strategy uses username and password, we will override with email
-            usernameField : 'username',
+            usernameField : 'name',
+            //last_nameField : 'last_name',
+            //phoneField : 'phone',
+            //emailField : 'email',
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, username, password, done) {
+        function(req, name, last_name, phone, email,password,done) {
             console.log('ITS SINGUP!!!!!!!!!!!!!!!!!!');
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            connection.query("SELECT * FROM user WHERE email = ?",[username], function(err, rows) {
+            connection.query("SELECT * FROM user WHERE email = ?",[email], function(err, rows) {
                 if (err)
                     return done(err);
                 if (rows.length) {
-                    return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                    return done(null, false, req.flash('signupMessage', 'That email is already uses.'));
                 } else {
                     // if there is no user with that username
                     // create the user
                     var newUserMysql = {
-                        username: username,
-                        password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
+                        name: name,
+                        password: bcrypt.hashSync(password, null, null),  // use the generateHash function in our user model
+                        last_name: last_name,
+                        phone: phone,
+                        email: email,
                     };
+                    console.log(newUserMysql);
 
-                    var insertQuery = "INSERT INTO users ( username, password ) values (?,?)";
+                    var insertQuery = "INSERT INTO users ( first_name, last_name, phone, email, password ) values (?,?)";
 
-                    connection.query(insertQuery,[newUserMysql.username, newUserMysql.password],function(err, rows) {
-                        newUserMysql.id = rows.insertId;
-
+                    connection.query(insertQuery,[newUserMysql.name, newUserMysql.last_name, newUserMysql.phone, newUserMysql.email, newUserMysql.password],function(err, rows) {
+                        //newUserMysql.user_id = rows.insertId;
                         return done(null, newUserMysql);
                     });
                 }

@@ -1,17 +1,18 @@
 var mysql = require('mysql');
+var bcrypt = require('bcrypt-nodejs');
 
-//var connection  = mysql.createConnection({
-//        host        :   'sql4.freemysqlhosting.net',
-//        user        :   'sql498232',
-//        password    :   'm6MqzCIhvf',
-//        database    :   'sql498232'
-//    });
 var connection  = mysql.createConnection({
-    host        :   'db4free.net',
-    user        :   'mozli',
-    password    :   'qwertyui',
-    database    :   'realtor_company'
+    host        :   'localhost',
+    user        :   'root',
+    password    :   'BanderaMozli1994',
+    database    :   'company'
 });
+//var connection  = mysql.createConnection({
+//    host        :   'db4free.net',
+//    user        :   'mozli',
+//    password    :   'qwertyui',
+//    database    :   'realtor_company'
+//});
 
 connection.connect(function(err) {
     if (err) {
@@ -85,19 +86,26 @@ module.exports = {
             throw "ERROR HA-HA";
         }
     },
-    saveUser:function(user){
-        var fullName = user.name.split(' ', 2);
+    saveUser:function(user, f){
+        //var fullName = user.name.split(' ', 2);
         var query = connection.query('select * from user', function (err, couunt, fl) {
             if (err) throw err;
-            console.log(couunt);
-            connection.query('INSERT INTO user (user_id,first_name, last_name, phone, password, email) VALUES ('+ (couunt.length+1)+',\''+ fullName[0] +'\', \'' +
-                ''+ fullName[1] +'\', \'' +
+            connection.query('INSERT INTO user (user_id,first_name, last_name, phone, password, email) VALUES ('+ (couunt.length+1)+',\''+ user.name +'\', \'' +
+                ''+ user.last_name +'\', \'' +
                 ''+ user.phone +'\', \'' +
-                ''+ user.password +'\', \'' +
+                ''+bcrypt.hashSync(user.password, null, null)+'\', \'' +
                 ''+ user.email +'\')', function(err, result) {
                 if (err) throw err;
-                console.log(result.insertId);
+                if (typeof f == 'function') {
+                    f('User save');
+                }
             });
+        });
+    },
+    userByid:function(req, f){
+        connection.query('select phone, first_name, last_name, phone from user where user_id='+ req.param('id'), function (err, row, fl) {
+            if (err) throw err;
+            f(row);
         });
     }
 

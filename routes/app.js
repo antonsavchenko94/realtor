@@ -6,8 +6,16 @@ module.exports = function(app, passport) {
         });
     });
     app.post('/user/registration', function(req,res){
+        //console.log(req.body);
         db.saveUser(req.body.user);
+        res.redirect('/');
     });
+
+    //app.post('/user/registration', passport.authenticate('local-signup', {
+    //    successRedirect : '/', // redirect to the secure profile section
+    //    failureRedirect : '/registration#toregister', // redirect back to the signup page if there is an error
+    //    failureFlash : true // allow flash messages
+    //}));
 
     app.post('/user/login', passport.authenticate('local-login', {
         //successRedirect : '/service', // redirect to the secure profile section
@@ -58,6 +66,9 @@ module.exports = function(app, passport) {
     });
     app.get('/dodati', function (req, res){
         res.render('dodati');
+    });
+    app.get('/chat', function (req, res){
+        res.render('chat');
     });
 };
 function isLoggedIn(req, res, next) {

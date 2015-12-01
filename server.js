@@ -18,7 +18,6 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
-app.use(bodyParser.json());
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
@@ -42,3 +41,4 @@ app.listen(port, function(){
 require('./routes/app.js')(app, passport);
 require('./routes/api.js')(app);
 require('./config/passport')(passport); // pass passport for configurat
+require('./config/chat')(app);
