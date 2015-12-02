@@ -47,8 +47,8 @@ module.exports = {
         }catch(err){
             res.send("It`s wrong request!!! Be careful")
         }
-
     },
+
     adverts: function (res) {
         var query = connection.query('select * from advert', function (err, rows, fields) {
             if (err) throw err;
@@ -108,8 +108,29 @@ module.exports = {
             });
         });
     },
+    saveAdvert:function(advert, user,f){
+        var query = connection.query('select * from advert', function (err, couunt, fl) {
+            if (err) throw err;
+            connection.query('INSERT INTO advert (user_id, advert_id,tittle, description, price, latitude, longitude, image, deal_type, realty_type) VALUES ('
+                + user +',\''
+                + (couunt.length+1)+'\', \'' +
+                ''+ advert.title +'\', \'' +
+                ''+ advert.description +'\', \'' +
+                ''+ advert.price +'\', \'' +
+                ''+ advert.latitude +'\', \'' +
+                ''+ advert.longitude +'\', \'' +
+                ''+ image +'\', \'' +
+                ''+ advert.deal_type +'\', \'' +
+                ''+ advert.realty_type +'\')', function(err, result) {
+                if (err) throw err;
+                if (typeof f == 'function') {
+                    f('User save');
+                }
+            });
+        });
+    },
     userByid:function(req, f){
-        connection.query('select phone, first_name, last_name, phone from user where user_id='+ req.param('id'), function (err, row, fl) {
+        connection.query('select phone, first_name, last_name, phone, email from user where user_id='+ req.param('id'), function (err, row, fl) {
             if (err) throw err;
             f(row);
         });
