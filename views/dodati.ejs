@@ -5,11 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css" title="default" />
 	<link rel="stylesheet" type="text/css" href="css/123.css" title="default" />
 	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	<!-- jQuery -->
 	<script src="js/jquery-1.3.2.min.js" type="text/javascript"></script>
 	<!-- jQuery slider plugin -->
 	<script src="js/easySlider1.5.js" type="text/javascript" ></script>
+	<script src="js/ajax.js" type="text/javascript" ></script>
 </head>
 
 
@@ -27,7 +29,11 @@
 			<li><a href="/show">Оголошення</a></li>
 			<li class="current"><a href="/service">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
+			<% if (user){%>
+			<li><a href="/logout">Вихід <span class="navi-description">Прощавайте </span></a></li>
+			<%}else {%>
 			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<%}%>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->
@@ -42,85 +48,39 @@
 	</div><!-- End header -->
 
 	<div id="contentArea">
-
-		<select name="Combobox1" size="1" id="Combobox1" style="position:absolute;left:549px;top:241px;width:229px;height:29px;z-index:0;" title="Обов'язкове поле">
-			<option>Київ</option>
-			<option>Вінниця</option>
-			<option>Дніпропетровськ</option>
-			<option>Донецьк</option>
-			<option>Житомир</option>
-			<option>Запоріжжя</option>
-			<option>Івано-Франківськ</option>
-			<option>Кіровоград</option>
-			<option>Луганськ</option>
-			<option>Луцьк</option>
-			<option>Львів</option>
-			<option>Миколаїв</option>
-			<option>Одеса</option>
-			<option>Полтава</option>
-			<option>Рівне</option>
-			<option>Сімферополь</option>
-			<option>Суми</option>
-			<option>Тернопіль</option>
-			<option>Ужгород</option>
-			<option>Харків</option>
-			<option>Херсон</option>
-			<option>Хмельницький</option>
-			<option>Черкаси</option>
-			<option>Чернігів</option>
-			<option>Чернівці</option>
-		</select>
-		<select name="Combobox2" size="1" id="Combobox2" style="position:absolute;left:549px;top:156px;width:229px;height:29px;z-index:1;" title="Обов'язкове поле">
-			<option>дім</option>
-			<option>квартира</option>
-			<option>земельна ділянка</option>
-			<option>гараж</option>
-			<option>офіс</option>
-		</select>
-		<div id="wb_Text1" style="position:absolute;left:414px;top:205px;width:250px;height:21px;z-index:2;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Тип операції: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<select name="Combobox2" size="1" id="Combobox3" style="position:absolute;left:549px;top:197px;width:229px;height:29px;z-index:3;" title="Обов'язкове поле">
-			<option>продаж</option>
-			<option>довготривала оренда</option>
-			<option>подобова оренда</option>
-		</select>
-		<div id="wb_Text2" style="position:absolute;left:414px;top:249px;width:250px;height:21px;z-index:4;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Місто: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<div id="wb_Text3" style="position:absolute;left:414px;top:164px;width:250px;height:21px;z-index:5;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Категорія: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<div id="wb_Text4" style="position:absolute;left:414px;top:295px;width:250px;height:21px;z-index:6;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Вулиця: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<input type="text" id="Editbox1" style="position:absolute;left:549px;top:287px;width:227px;height:27px;line-height:27px;z-index:7;" name="Editbox1" value="" title="Обов'язкове поле">
-		<div id="wb_Text5" style="position:absolute;left:414px;top:343px;width:250px;height:21px;z-index:8;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Кімнат: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<input type="number" id="Editbox2" style="position:absolute;left:549px;top:335px;width:227px;height:27px;line-height:27px;z-index:9;" name="Editbox1" value="" title="Обов'язкове поле">
-		<input type="number" id="Editbox3" style="position:absolute;left:549px;top:381px;width:227px;height:27px;line-height:27px;z-index:10;" name="Editbox1" value="" title="Обов'язкове поле">
-		<div id="wb_Text6" style="position:absolute;left:414px;top:389px;width:250px;height:21px;z-index:11;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Площа: </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<div id="wb_Text7" style="position:absolute;left:414px;top:437px;width:250px;height:21px;z-index:12;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Поверх: </span></div>
-		<input type="number" id="Editbox4" style="position:absolute;left:549px;top:429px;width:227px;height:27px;line-height:27px;z-index:13;" name="Editbox1" value="">
-		<input type="file" id="FileUpload1" style="position:absolute;left:471px;top:539px;width:278px;height:22px;line-height:22px;z-index:14;" name="FileUpload1">
-		<div id="wb_Text8" style="position:absolute;left:414px;top:502px;width:121px;height:21px;z-index:15;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Додати фото:</span></div>
-		<button id="AdvancedButton1" type="button" style="position:absolute;left:521px;top:799px;width:120px;height:39px;z-index:16;" name="" value="">
-			<div style="text-align:center"><span style="color:#000000;font-family:Arial;font-size:13px">Підтвердити</span></div>
-		</button>
-		<div id="wb_Text9" style="position:absolute;left:414px;top:737px;width:135px;height:21px;z-index:17;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">Вартість(грн): </span><span style="color:#FF0000;font-family:'Times New Roman';font-size:19px;">*</span></div>
-		<input type="number" id="Editbox5" style="position:absolute;left:549px;top:729px;width:227px;height:27px;line-height:27px;z-index:18;" name="Editbox1" value="">
-		<div id="wb_Text10" style="position:absolute;left:458px;top:90px;width:256px;height:26px;z-index:19;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:24px;"><strong>Додання оголошення</strong></span></div>
-		<div id="wb_Text11" style="position:absolute;left:786px;top:389px;width:250px;height:21px;z-index:20;text-align:left;">
-			<span style="color:#000000;font-family:'Times New Roman';font-size:19px;">кв. м</span></div>
-		<button id="AdvancedButton2" type="button" style="position:absolute;left:786px;top:287px;width:78px;height:34px;z-index:21;" name="" value="">
-			<div style="text-align:center"><span style="color:#000000;font-family:Arial;font-size:13px">Позначити на карті</span></div>
-		</button>
-		<input type="file" id="FileUpload2" style="position:absolute;left:471px;top:575px;width:278px;height:22px;line-height:22px;z-index:22;" name="FileUpload1">
-		<input type="file" id="FileUpload3" style="position:absolute;left:471px;top:609px;width:278px;height:22px;line-height:22px;z-index:23;" name="FileUpload1">
-		<input type="file" id="FileUpload4" style="position:absolute;left:471px;top:642px;width:278px;height:22px;line-height:22px;z-index:24;" name="FileUpload1">
-		<input type="file" id="FileUpload5" style="position:absolute;left:471px;top:675px;width:278px;height:22px;line-height:22px;z-index:25;" name="FileUpload1">
-
+		<div id="id_form">
+			<form action="/add/advert" method="post" class="form-group" style="margin-right: 200px">
+				<p>Заголовок оголошення</p>
+				<input type="text" name="advert[tittle]"/>
+				<p>Опис оголошення</p>
+				<!--<input type="text" multiple name="adver[description]"/>-->
+				<textarea name="advert[description]" rows="5" cols="40">	</textarea>
+				<p>Ціна лоту $</p>
+				<input type="text" name="advert[price]"/>
+				<p>Зображення (.jpeg)</p>
+				<input type="file" name="image" id="inputFileToLoad" onchange="encodeImageFileAsURL();"/>
+				<p>Тип угоди</p>
+				<!--<input type="text" name="advert[deal_type]"/>-->
+				<select name="advert[deal_type]">
+					<option selected="" value="Продаж">Продаж</option>
+					<option value="Оренда">Оренда</option>
+				</select>
+				<p>Тип нерухомості</p>
+				<!--<input type="text" name="advert[realty_type]"/>-->
+					<select name="advert[realty_type]" id="edit-field-realty_type" class="form-select">
+						<option value="">Всі типи</option>
+						<option value="Будинок">Будинок</option>
+						<option value="Квартира">Квартира</option>
+						<option value="Комерційна нерухомість">Комерційна нерухомість</option>
+					</select>
+				<input type="submit" value="Зберегти">
+				<div id="imgTest" style="display: none"></div>
+				<input type="hidden" name="advert[image]" value="" id="base64"/>
+				<input type="hidden" name="advert[lat]" value="" id="lat"/>
+				<input type="hidden" name="advert[lng]" value="" id="lng"/>
+				<div id="map"></div>
+			</form>
+		</div>
 	</div><!-- End contentArea -->
 
 
@@ -154,6 +114,52 @@
 		</div><!-- End footerLinks -->
 	</div><!-- End footerContent -->
 </div><!-- End wrapper -->
+<script>
 
+	// In the following example, markers appear when the user clicks on the map.
+	// The markers are stored in an array.
+	// The user can then click an option to hide, show or delete the markers.
+	var map;
+	var markers = [];
+
+	function initMap() {
+		var haightAshbury = {lat: 37.769, lng: -122.446};
+
+		map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 12,
+			center: haightAshbury,
+			mapTypeId: google.maps.MapTypeId.TERRAIN
+		});
+
+		// This event listener will call addMarker() when the map is clicked.
+		map.addListener('click', function(event) {
+			setMapOnAll(null);
+			addMarker(event.latLng);
+		});
+
+		// Adds a marker at the center of the map.
+		addMarker(haightAshbury);
+	}
+
+	// Adds a marker to the map and push to the array.
+	function addMarker(location) {
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map
+		});
+		document.getElementById("lat").value = marker.position.lat();
+		document.getElementById("lng").value = marker.position.lng();
+		console.log(marker.position.lat());
+		markers.push(marker);
+	}
+	function setMapOnAll(map) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(map);
+		}
+	}
+
+</script>
+<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQQy4xbmUbCmkznbYhhU6D-JiRt4otQMg&signed_in=true&callback=initMap"></script>
 </body>
 </html>
