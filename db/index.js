@@ -97,7 +97,7 @@ module.exports = {
                 ''+ user.email +'\')', function(err, result) {
                 if (err) throw err;
                 if (typeof f == 'function') {
-                    f('User save');
+                    f('User save', 200);
                 }
             });
         });

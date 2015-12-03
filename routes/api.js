@@ -19,8 +19,8 @@ module.exports = function(app) {
     });
 
     app.post('/api/user/registration', function(req,res){
-        db.saveUser(req.body.user, function(msg){
-            res.send(msg);
+        db.saveUser(req.body.user, function(msg, code){
+            res.status(code).send(msg);
         });
     });
 
