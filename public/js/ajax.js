@@ -34,5 +34,38 @@ function filter() {
     });
 }
 
+function encodeImageFileAsURL(){
+
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0)
+    {
+        var fileToLoad = filesSelected[0];
+
+        var fileReader = new FileReader();
+
+        fileReader.onload = function(fileLoadedEvent) {
+            var srcData = fileLoadedEvent.target.result;
+            var newImage = document.createElement('img');
+            newImage.src = srcData;
+
+            document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+            var base64 = document.getElementById("imgTest").innerHTML;
+            srcData = srcData.replace("data:image/jpeg;base64,", "");
+            srcData = srcData.replace("data:image/png;base64,", "");
+            srcData = srcData.replace("data:image/gif;base64,", "");
+            srcData = srcData.replace("data:image/jpg;base64,", "");
+            console.log(typeof srcData);
+            console.log(srcData);
+            document.getElementById("base64").value = srcData;
+        };
+        fileReader.readAsDataURL(fileToLoad);
+    }
+}
+
+$(function(){
+    var referrer =  document.referrer;
+    $('#referrer').val(referrer);
+});
+
 
 

@@ -16,6 +16,7 @@ app.use(cookieParser()); // read cookies (needed for auth)
 app.use(express.static(__dirname + '/public'));
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    limit:'50mb',
     extended: true
 }));
 
