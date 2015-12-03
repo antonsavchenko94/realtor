@@ -55,7 +55,7 @@ module.exports = function(app, passport) {
         res.render('add');
     });
     app.get('/dodati', isLoggedIn,function (req, res){
-        res.render('dodati');
+        res.render('dodati', {user:req.user});
     });
     app.get('/chat', function (req, res){
         res.render('chat');
