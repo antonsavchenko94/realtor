@@ -47,8 +47,14 @@
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 10px 0 0 50px;
-
 }
+
+#user{
+    background-color: #b1ec96;
+    width: 120px;
+    box-shadow: 0 0 10px  rgba(0,0,0,0.5);
+}
+
 .news h1{
     margin: 10px;
     text-align: center;
