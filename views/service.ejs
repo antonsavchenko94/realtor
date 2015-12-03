@@ -26,7 +26,11 @@
 			<li><a href="/show">Оголошення</a></li>
 			<li class="current"><a href="/service">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
+			<% if (user){%>
+			<li><a href="/logout">Вихід <span class="navi-description">Прощавайте </span></a></li>
+			<%}else {%>
 			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<%}%>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->

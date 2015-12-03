@@ -29,7 +29,11 @@
 			<li class="current"><a href="/show">Оголошення</a></li>
 			<li><a href="services.html">Сервіси</a></li>
 			<li><a href="about.html">Зворотній зв'язок</a></li>
-			<li><a href="registration.php">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<% if (user){%>
+			<li><a href="/logout">Вихід <span class="navi-description">Прощавайте </span></a></li>
+			<%}else {%>
+			<li><a href="/registration">Реєстрація <span class="navi-description">приєднуйтесь </span></a></li>
+			<%}%>
 		</ul><!-- End navigation -->
 
 		<!-- Search -->
@@ -50,6 +54,7 @@
 				Ви увійшли на сайт !
 			</p>
 			<h5>User name: <%=user.first_name%></h5>
+			<h5><a href="/logout">Вихід</a></h5>
 			<%} else {%>
 			<p>
 				Ви не авторизовані!
