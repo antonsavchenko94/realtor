@@ -2,7 +2,7 @@ var db = require('../db');
 module.exports = function(app, passport) {
     app.get('/', function (req, res) {
         db.advertsNotJson(function(rows){
-            res.render('index', {title:'Головна', adverts:rows});
+            res.render('index', {title:'Головна', adverts:rows, user:req.user});
         });
     });
     app.post('/user/registration', function(req,res){
@@ -46,15 +46,15 @@ module.exports = function(app, passport) {
     });
 
     app.get('/service', isLoggedIn ,function (req, res){
-        res.render('service');
+        res.render('service', {user:req.user});
     });
     app.get('/registration', function (req, res){
-        res.render('registration');
+        res.render('registration',{user:req.user});
     });
     app.get('/add', function (req, res){
         res.render('add');
     });
-    app.get('/dodati', function (req, res){
+    app.get('/dodati', isLoggedIn,function (req, res){
         res.render('dodati');
     });
     app.get('/chat', function (req, res){
