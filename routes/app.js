@@ -6,24 +6,15 @@ module.exports = function(app, passport) {
         });
     });
     app.post('/user/registration', function(req,res){
-        //console.log(req.body);
+        console.log(req.body);
         db.saveUser(req.body.user);
         res.redirect('/');
     });
 
-    //app.post('/user/registration', passport.authenticate('local-signup', {
-    //    successRedirect : '/', // redirect to the secure profile section
-    //    failureRedirect : '/registration#toregister', // redirect back to the signup page if there is an error
-    //    failureFlash : true // allow flash messages
-    //}));
-
     app.post('/user/login', passport.authenticate('local-login', {
-        //successRedirect : '/service', // redirect to the secure profile section
         failureRedirect : '/registration', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }),function(req, res) {
-        console.log("Autorize!!!");
-
         if (req.body.remember) {
             req.session.cookie.maxAge = 1000 * 60 * 3;
             console.log('MAX AGE');
@@ -31,7 +22,7 @@ module.exports = function(app, passport) {
             req.session.cookie.expires = false;
             console.log('MAX AGE FALSE');
         }
-        res.redirect('back');
+        res.redirect(req.body.referrer);
     });
 
     app.get('/registration', function (req, res) {
@@ -43,7 +34,6 @@ module.exports = function(app, passport) {
     });
     app.get('/show', function (req, res){
         db.advertsNotJson(function(rows){
-            //console.log(rows);
             res.render('show', {title:'Оголошення', adverts:rows, user:req.user});
         });
     });
@@ -69,6 +59,27 @@ module.exports = function(app, passport) {
     });
     app.get('/chat', function (req, res){
         res.render('chat');
+    });
+
+    app.post('/add/advert', function (req, res){
+        console.log(req.body);
+        db.saveAdvert(req.body.advert, req.user.user_id, function(msg){
+            res.send(msg);
+        });
+    });
+
+    app.get('/administration', function(req, res){
+        res.render('panel');
+    });
+
+    app.get('/logout', function(req, res, next) {
+        req.logout();
+        req.session.save(function (err) {
+            if (err) {
+                return next(err);
+            }
+            res.redirect('/');
+        });
     });
 };
 function isLoggedIn(req, res, next) {
