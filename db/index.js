@@ -114,17 +114,17 @@ module.exports = {
             connection.query('INSERT INTO advert (user_id, advert_id,tittle, description, price, latitude, longitude, image, deal_type, realty_type) VALUES ('
                 + user +',\''
                 + (couunt.length+1)+'\', \'' +
-                ''+ advert.title +'\', \'' +
+                ''+ advert.tittle +'\', \'' +
                 ''+ advert.description +'\', \'' +
                 ''+ advert.price +'\', \'' +
-                ''+ advert.latitude +'\', \'' +
-                ''+ advert.longitude +'\', \'' +
-                ''+ image +'\', \'' +
+                ''+ advert.lat +'\', \'' +
+                ''+ advert.lng +'\', \'' +
+                ''+ advert.image +'\', \'' +
                 ''+ advert.deal_type +'\', \'' +
                 ''+ advert.realty_type +'\')', function(err, result) {
                 if (err) throw err;
                 if (typeof f == 'function') {
-                    f('User save');
+                    f('Success');
                 }
             });
         });
