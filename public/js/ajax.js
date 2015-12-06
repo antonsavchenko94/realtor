@@ -10,6 +10,8 @@ function filter() {
     var deal_type = $('#edit-field-deal-type option:selected').text(),
         realty_type = $('#edit-field-realty_type option:selected').text(),
         price = $('#edit-field-price option:selected').text();
+    realty_type = realty_type=='Всі типи'?'':realty_type;
+    price = price==' < 500 $' ? 500:price=='від 500 до 1 000 $' ?999: price==' > 1 000 $'?1000:'';
 
     $.getJSON( "/api/advertajax?deal="+deal_type+"&realty="+ realty_type+"&price="+price+"", function( data ) {
         var items = [];

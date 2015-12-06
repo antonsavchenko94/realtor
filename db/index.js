@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 var connection  = mysql.createConnection({
     host        :   'localhost',
     user        :   'root',
-    password    :   'BanderaMozli1994',
+    password    :   'root',
     database    :   'company'
 });
 
@@ -59,15 +59,21 @@ module.exports = {
         }
     },
     advertSecond:function (req, res) {
-        console.log(req.param("deal"));
-            var query = connection.query('select * from advert where deal_type =\''+req.param("deal")+'\' and realty_type=\''+req.param("realty")+'\'', function (err, rows, fields) {
+        var price = req.param("price")==500?' price < 500 ':req.param("price")==999?' price>500 and price<1000 ':req.param("price")==1000?' price>1000 ':'';
+        var realty = req.param("realty") ? ' realty_type=\''+req.param("realty")+'\''+ (price?' and ':''):'';
+        var deal = req.param("deal") ? ' deal_type =\''+ req.param("deal")+'\''+(realty||price?' and ':''):'';
+        var param = 'where '+ deal + realty + price;
+        var select = 'select * from advert '+param;
+        console.log(select);
+        connection.query(select, function (err, rows, fields) {
                 if (err) throw err;
                 res.send(rows);
             });
+
     },
 
     advertsNotJson: function(f){
-        var query = connection.query('select * from advert', function (err, rows, fields) {
+        var query = connection.query('select * from advert where flag = 1', function (err, rows, fields) {
             if (err) throw err;
             obj = rows;
             f(rows);
@@ -105,7 +111,7 @@ module.exports = {
     saveAdvert:function(advert, user,f){
         var query = connection.query('select * from advert', function (err, couunt, fl) {
             if (err) throw err;
-            connection.query('INSERT INTO advert (user_id, advert_id,tittle, description, price, latitude, longitude, image, deal_type, realty_type) VALUES ('
+            connection.query('INSERT INTO advert (user_id, advert_id,tittle, description, price, latitude, longitude, image, deal_type, realty_type, flag) VALUES ('
                 + user +',\''
                 + (couunt.length+1)+'\', \'' +
                 ''+ advert.tittle +'\', \'' +
@@ -115,7 +121,8 @@ module.exports = {
                 ''+ advert.lng +'\', \'' +
                 ''+ advert.image +'\', \'' +
                 ''+ advert.deal_type +'\', \'' +
-                ''+ advert.realty_type +'\')', function(err, result) {
+                ''+ advert.realty_type +'\'' +
+                ', 0)', function(err, result) {
                 if (err) throw err;
                 if (typeof f == 'function') {
                     f('Success');
@@ -128,6 +135,24 @@ module.exports = {
             if (err) throw err;
             f(row);
         });
+    },
+
+    notShowAdvert: function(res){
+        connection.query('select * from advert where flag=0', function (err, advert, fields) {
+            if (err) throw err;
+            if (advert.length >0){
+                connection.query('select * from user where user_id = '+ advert[0].user_id,function (err, user, fields) {
+                    res.render('panel',{advert:advert,own:user});
+                });
+            }else {
+                res.render('panel',{advert:null,own:null});
+            }
+        })
+    },
+    acceptAdvert:function(advert, res){
+        connection.query('Update advert SET flag = 1 where advert_id='+ advert.id, function (err, advert, fields) {
+            res.redirect(200,'/administration');
+        })
     }
 
 };
