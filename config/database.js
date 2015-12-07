@@ -1,10 +1,10 @@
 // config/database.js
 module.exports = {
     'connection': {
-        'host'        :   'db4free.net',
-        'user'       :   'mozli',
-        'password'    :   'qwertyui'
+        'host'        :   'localhost',
+        'user'        :   'root',
+        'password'    :   'root',
     },
-	'database': 'realtor_company',
+    'database': 'company',
     'users_table': 'user'
 };

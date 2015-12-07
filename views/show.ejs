@@ -54,6 +54,9 @@
 			</p>
 			<h5>User name: <%=user.first_name%></h5>
 			<h5><a href="/logout">Вихід</a></h5>
+			<p>
+				<a href="/dodati">Додати своє оголошення</a>
+			</p>
 			<%} else {%>
 			<p>
 				Ви не авторизовані!
@@ -73,7 +76,7 @@
 					<label for="edit-field-deal-type">Тип угоди</label>
 					<div class="views-widget">
 						<div class="form-item form-type-select">
-							<select id="edit-field-deal-type" name="cat_type" class="form-select">
+							<select id="edit-field-deal-type" name="deal_type" class="form-select">
 								<option selected="" value="sale">Продаж</option>
 								<option value="rent">Оренда</option>
 							</select>
@@ -90,10 +93,10 @@
 				</div>
 
 				<div id="edit-field-price-wrapper" class="views-exposed-widget">
-					<label for="edit-field-price">Стоимость</label>
+					<label for="edit-field-price">Вартість</label>
 					<div class="views-widget">
 						<div class="form-item form-type-select">
-							<select name="price" id="edit-field-price" class="form-select"><option value="">Любая</option><option value="under_500">менее 500 €</option><option value="from_500_to_1000">от 500 до 1 000 €</option><option value="from_1000">от 1 000 €</option></select>								</div>
+							<select name="price" id="edit-field-price" class="form-select"><option value="">Будь-яка</option><option value="under_500"> < 500 $</option><option value="from_500_to_1000">від 500 до 1 000 $</option><option value="from_1000"> > 1 000 $</option></select>								</div>
 					</div>
 				</div>
 

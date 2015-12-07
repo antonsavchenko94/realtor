@@ -51,14 +51,9 @@ module.exports = function(app, passport) {
     app.get('/registration', function (req, res){
         res.render('registration',{user:req.user});
     });
-    app.get('/add', function (req, res){
-        res.render('add');
-    });
+
     app.get('/dodati', isLoggedIn,function (req, res){
-        res.render('dodati');
-    });
-    app.get('/chat', function (req, res){
-        res.render('chat');
+        res.render('dodati', {user:req.user});
     });
 
     app.post('/add/advert', function (req, res){
@@ -69,7 +64,11 @@ module.exports = function(app, passport) {
     });
 
     app.get('/administration', function(req, res){
-        res.render('panel');
+        db.notShowAdvert(res);
+    });
+
+    app.post('/accept', function(req, res){
+        db.acceptAdvert(req.body.advert, res);
     });
 
     app.get('/logout', function(req, res, next) {

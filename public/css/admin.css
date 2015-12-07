@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: #040000;
+}
+a:hover{
+	text-decoration: none;
+	color: #acacf4;
+}
+.td {
+	background-color: #999;
+	text-align: center;
+	color: #fff;
+}
+#table{
+	display: table;
+	width: 1200px;
+	margin: 0 auto;
+	border: 1;
+}
+#table_1{
+	display: none;
+	width: 1200px;
+	margin: 0 auto;
+	border: 1;
+}
+.td_1{
+	background-color: #ffffff;
+	text-align: center;
+	color: #3e2239;
+}
+.add{
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/plus.png);
+	border:none;
+	cursor: pointer;
+	float: right;
+	margin-right: 100px;
+}
+.out{
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/log_out.png);
+	border:none;
+	cursor: pointer;
+	float: right;
+	margin-right: 100px;
+}
+.del{
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/delete.png);
+	border:none;
+	cursor: pointer;
+	float: left;
+	
+}
+.edit{
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/edit.png);
+	border:none;
+	cursor: pointer;
+	float: left;
+	
+}
+.up{
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/restore.png);
+	border:none;
+	cursor: pointer;
+	float: left;
+	
+}
