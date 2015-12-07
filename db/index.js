@@ -2,10 +2,10 @@ var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
 
 var connection  = mysql.createConnection({
-    host        :   'localhost',
-    user        :   'root',
-    password    :   'root',
-    database    :   'company'
+    host        :   'db4free.net',
+    user        :   'mozli',
+    password    :   'qwertyui',
+    database    :   'realtor_company'
 });
 
 connection.connect(function(err) {
