@@ -73,7 +73,7 @@ module.exports = {
     },
 
     advertsNotJson: function(f){
-        var query = connection.query('select * from advert where flag = 1', function (err, rows, fields) {
+        var query = connection.query('select * from advert where flag = 0', function (err, rows, fields) {
             if (err) throw err;
             obj = rows;
             f(rows);
